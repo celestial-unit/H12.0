@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monument Restoration 3D</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-900 p-4 shadow-lg">
+        <div class="container mx-auto text-white text-center text-xl font-bold">
+            Monument Restoration 3D
+        </div>
+    </nav>
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-center text-3xl font-semibold text-gray-800 mb-6">Select an Image</h1>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            {% for image in images %}
+            <div class="bg-white p-3 rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" onclick="processImage('{{ image }}')">
+                <img src="{{ url_for('static', filename='images/' + image) }}" alt="Monument Image" class="w-full h-48 object-cover rounded-lg">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        function processImage(imageName) {
+            // Ensure the image path aligns with the server-side route
+            window.location.href = `/process/${imageName}`;
+        }
+    </script>
+</body>
+</html>
