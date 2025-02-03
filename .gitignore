@@ -52,12 +52,10 @@ outputs/
 # Python virtual environment
 H12/
 
-# H5 files
-*.h5
+
 
 # Shared libraries
 *.so
 *.so.*
 
-# Model files
-models/
+
