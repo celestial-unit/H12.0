@@ -3,30 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generated 3D Output</title>
+    <title>SbibaGuard - 3D Output</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --history-gold: #FFD700;
+            --ancient-ochre: #CC7722;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <nav class="bg-blue-900 p-4 shadow-lg">
-        <div class="container mx-auto text-white text-center text-xl font-bold">
-            3D Output Viewer
+<body class="bg-faf6f0 text-brown-800">
+    <nav class="bg-amber-50 shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-amber-500 rounded-full mr-3"></div>
+                    <span class="text-xl font-bold text-amber-800">SbibaGuard</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-amber-800 hover:text-amber-600">Home</a>
+                </div>
+            </div>
         </div>
     </nav>
     
-    <div class="container mx-auto px-4 py-6 text-center">
-        <h1 class="text-3xl font-semibold text-gray-800 mb-6">Generated 3D Output</h1>
-        
-        <h2 class="text-xl font-medium text-gray-700 mb-4">3D Video</h2>
-        <video controls class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
-            <source src="{{ url_for('process_3d.get_output', filename=video_path) }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        
-        <h2 class="text-xl font-medium text-gray-700 mt-6 mb-4">3D Model (GLB)</h2>
-        <a href="{{ url_for('process_3d.get_output', filename=glb_path) }}" download 
-           class="bg-blue-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-700">
-            Download GLB File
-        </a>
+    <div class="container mx-auto px-4 pt-24 pb-12 text-center">
+        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500">
+            <h1 class="text-3xl font-semibold text-amber-800 mb-8">Generated 3D Output</h1>
+            
+            <div class="mb-12">
+                <h2 class="text-xl font-medium text-amber-700 mb-6">3D Video</h2>
+                <video controls class="w-full max-w-2xl mx-auto rounded-lg shadow-md">
+                    <source src="{{ url_for('process_3d.get_output', filename=video_path) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div>
+                <h2 class="text-xl font-medium text-amber-700 mb-6">3D Model (GLB)</h2>
+                <a href="{{ url_for('process_3d.get_output', filename=glb_path) }}" download 
+                   class="bg-amber-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-amber-600 transition inline-block">
+                    Download GLB File
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

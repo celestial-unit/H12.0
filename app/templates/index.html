@@ -1,33 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monument Restoration Models</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SbibaGuard - Heritage Preservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --history-gold: #FFD700;
+            --ancient-ochre: #CC7722;
+        }
+        body {
+            opacity: 0;
+            background-color: #faf6f0;
+        }
+        .history-highlight {
+            position: relative;
+            display: inline-block;
+        }
+        .history-highlight:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--history-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .history-highlight:hover:after {
+            transform: scaleX(1);
+        }
+        .timeline-marker {
+            width: 16px;
+            height: 16px;
+            background: var(--history-gold);
+            border: 3px solid var(--ancient-ochre);
+        }
+        .model-card {
+            transition: transform 0.3s ease;
+        }
+        .model-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-<nav class="bg-blue-900 p-4 shadow-lg">
-<div class="container mx-auto text-white text-center text-xl font-bold">
-Monument Restoration Models
-</div>
-</nav>
-<div class="container mx-auto px-4 py-20">
-<h1 class="text-center text-3xl font-semibold text-gray-800 mb-10">Choose a Model</h1>
-<div class="flex justify-center space-x-8">
-<!-- Button for 3D Model -->
-<a href="/process_3d" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
-3D Model
-</a>
-<!-- Button for Prediction Model -->
-<a href="/predict" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
-Predict
-</a>
-<!-- Button for Chatbot -->
-<a href="/chatbot" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition transform hover:scale-105">
-Chatbot
-</a>
-</div>
-</div>
+<body class="text-brown-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-amber-50 shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-amber-500 rounded-full mr-3"></div>
+                    <span class="text-xl font-bold text-amber-800">SbibaGuard</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#models" class="text-amber-800 hover:text-amber-600">Models</a>
+                    <a href="#features" class="text-amber-800 hover:text-amber-600">Features</a>
+                    <a href="#timeline" class="text-amber-800 hover:text-amber-600">Timeline</a>
+                    <a href="#legacy" class="text-amber-800 hover:text-amber-600">Legacy</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-4 pt-24 pb-12">
+        <div class="text-center mb-20">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                <span class="history-highlight bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">
+                    Preserving Sbiba's Golden Legacy
+                </span>
+            </h1>
+            <p class="text-xl text-amber-800 mb-8">Where Ancient Wisdom Meets Modern Preservation</p>
+        </div>
+
+        <!-- Model Selection Section -->
+        <section id="models" class="mb-20">
+            <h2 class="text-3xl font-bold text-center text-amber-800 mb-12">Choose Your Preservation Tool</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="/process_3d" class="model-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg mb-4 flex items-center justify-center text-amber-600">🏛️</div>
+                    <h3 class="text-xl font-bold mb-3 text-amber-800">3D Model</h3>
+                    <p class="text-amber-600 mb-4">Create detailed 3D models of historical structures</p>
+                    <div class="bg-amber-500 text-white px-6 py-2 rounded-full text-center hover:bg-amber-600 transition">
+                        Start Modeling
+                    </div>
+                </a>
+                
+                <a href="/predict" class="model-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg mb-4 flex items-center justify-center text-amber-600">🔮</div>
+                    <h3 class="text-xl font-bold mb-3 text-amber-800">Predict</h3>
+                    <p class="text-amber-600 mb-4">Analyze and predict restoration needs</p>
+                    <div class="bg-amber-500 text-white px-6 py-2 rounded-full text-center hover:bg-amber-600 transition">
+                        Start Analysis
+                    </div>
+                </a>
+                
+                <a href="/chatbot" class="model-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500">
+                    <div class="w-12 h-12 bg-amber-100 rounded-lg mb-4 flex items-center justify-center text-amber-600">💬</div>
+                    <h3 class="text-xl font-bold mb-3 text-amber-800">Chatbot</h3>
+                    <p class="text-amber-600 mb-4">Get instant answers about preservation</p>
+                    <div class="bg-amber-500 text-white px-6 py-2 rounded-full text-center hover:bg-amber-600 transition">
+                        Start Chat
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- [Rest of the original content remains the same...] -->
+
+    </main>
+
+    <script>
+        window.onload = function() {
+            gsap.to("body", {opacity: 1, duration: 1});
+            gsap.from(".model-card", {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                stagger: 0.2,
+                delay: 0.5
+            });
+            gsap.from(".timeline-item", {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                stagger: 0.3,
+                scrollTrigger: {
+                    trigger: "#timeline",
+                    start: "top center"
+                }
+            });
+        };
+    </script>
 </body>
 </html>

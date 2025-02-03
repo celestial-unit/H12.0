@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot avec Chatbase</title>
+    <title>SbibaGuard - Chatbot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 50px;
-        }
-        .chatbox {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        :root {
+            --history-gold: #FFD700;
+            --ancient-ochre: #CC7722;
         }
     </style>
 </head>
-<body>
+<body class="bg-faf6f0 text-brown-800">
+    <nav class="bg-amber-50 shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-amber-500 rounded-full mr-3"></div>
+                    <span class="text-xl font-bold text-amber-800">SbibaGuard</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-amber-800 hover:text-amber-600">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <div class="chatbox">
-        <h3>Bienvenue dans notre Chatbot</h3>
-        <p>Posez-moi une question !</p>
-        <!-- Le chatbot Chatbase sera ici -->
+    <div class="container mx-auto px-4 pt-24 pb-12 max-w-2xl">
+        <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-amber-500">
+            <h3 class="text-3xl font-bold text-center text-amber-800 mb-6">Chatbot</h3>
+            <p class="text-center text-amber-600 mb-8">Ask questions about heritage preservation</p>
+            
+            <!-- Le chatbot Chatbase sera ici -->
+            <div id="chatbase-container">
+                <!-- Placeholder for Chatbase integration -->
+            </div>
+        </div>
     </div>
 
     <!-- Intégration du script Chatbase -->
@@ -62,6 +73,5 @@
         }
     })();
     </script>
-
 </body>
 </html>

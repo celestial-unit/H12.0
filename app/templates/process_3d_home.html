@@ -3,28 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monument Restoration 3D</title>
+    <title>SbibaGuard - 3D Monument Restoration</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --history-gold: #FFD700;
+            --ancient-ochre: #CC7722;
+        }
+        .model-card {
+            transition: transform 0.3s ease;
+        }
+        .model-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <nav class="bg-blue-900 p-4 shadow-lg">
-        <div class="container mx-auto text-white text-center text-xl font-bold">
-            Monument Restoration 3D
+<body class="bg-faf6f0 text-brown-800">
+    <nav class="bg-amber-50 shadow-sm fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-amber-500 rounded-full mr-3"></div>
+                    <span class="text-xl font-bold text-amber-800">SbibaGuard</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-amber-800 hover:text-amber-600">Home</a>
+                </div>
+            </div>
         </div>
     </nav>
-    <div class="container mx-auto px-4 py-6">
-        <h1 class="text-center text-3xl font-semibold text-gray-800 mb-6">Select an Image</h1>
+
+    <div class="container mx-auto px-4 pt-24 pb-12">
+        <h1 class="text-center text-3xl font-semibold text-amber-800 mb-12">Select a Monument Image</h1>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {% for image in images %}
-            <div class="bg-white p-3 rounded-lg shadow-md transition transform hover:scale-105 cursor-pointer" onclick="processImage('{{ image }}')">
+            <div class="model-card bg-white p-3 rounded-lg shadow-lg border-t-4 border-amber-500 cursor-pointer hover:shadow-xl" onclick="processImage('{{ image }}')">
                 <img src="{{ url_for('static', filename='images/' + image) }}" alt="Monument Image" class="w-full h-48 object-cover rounded-lg">
             </div>
             {% endfor %}
         </div>
     </div>
+
     <script>
         function processImage(imageName) {
-            // Ensure the image path aligns with the server-side route
             window.location.href = `/process/${imageName}`;
         }
     </script>
