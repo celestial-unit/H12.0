@@ -5,6 +5,11 @@
 ## Project Overview 🎯
 A web application developed for the H12 Innovation Hackathon (January 29 - February 5, 2025) that makes Sbiba's historical sites more accessible and interactive using AI technology.
 
+## Project Video 🎥
+Watch the project video showcasing Sbiba's cultural heritage:
+
+![SbibaGuard Video](sbibaGuard.mp4)
+
 ## Key Features ✨
 - **Artifact Recognition** - Upload photos to identify historical artifacts
 - **Smart Chatbot** - Get instant information about Sbiba's history
