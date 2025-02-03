@@ -8,7 +8,7 @@ A web application developed for the H12 Innovation Hackathon (January 29 - Febru
 ## Project Video 🎥
 Watch the project video showcasing Sbiba's cultural heritage:
 
-![SbibaGuard Video](sbibaGuard.mp4)
+![SbibaGuard Video](https://drive.google.com/file/d/1w7E5KOBcMcl6jhsiQ2nZPu9BHtinnVi2/view?usp=sharing)
 
 ## Key Features ✨
 - **Artifact Recognition** - Upload photos to identify historical artifacts
